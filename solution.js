@@ -50,6 +50,10 @@ class LinkedList {
     };
     currentNode.next = currentNode.next.next;
   };
+
+  getFirst() {
+    return this.head;
+  }
 };
 
 
