@@ -19,6 +19,17 @@ class LinkedList {
 
     newNode.next = this.head;
     this.head = newNode;
+  };
+
+  size(){
+    let count = 0;
+    let currentNode = this.head;
+
+    while(currentNode){
+      count++;
+      currentNode = currentNode.next;
+    };
+    return count;
   }
 };
 
