@@ -58,8 +58,44 @@ class LinkedList {
   getLast() {
     let currentNode = this.head;
 
-    while( currentNode.next != null) {
+    while (currentNode.next != null) {
       currentNode = currentNode.next;
+    };
+    return currentNode;
+  };
+
+  // search(key) {
+  //   let currentNode = this.head;
+  //   let count = 1;
+
+  //   while (count < key) {
+  //     console.log(currentNode)
+  //     currentNode = currentNode.next;
+  //     count++;
+  //   };
+  //   return currentNode;
+  // }
+
+  search(value) {
+    let currentNode = this.head;
+
+    while (currentNode != null) {
+      if (currentNode.data === value) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
+    };
+    return null;
+  };
+
+  getKth(key) {
+    let currentNode = this.head;
+    let count = 1;
+
+    while (count < key) {
+      console.log(currentNode)
+      currentNode = currentNode.next;
+      count++;
     };
     return currentNode;
   }
