@@ -64,18 +64,6 @@ class LinkedList {
     return currentNode;
   };
 
-  // search(key) {
-  //   let currentNode = this.head;
-  //   let count = 1;
-
-  //   while (count < key) {
-  //     console.log(currentNode)
-  //     currentNode = currentNode.next;
-  //     count++;
-  //   };
-  //   return currentNode;
-  // }
-
   search(value) {
     let currentNode = this.head;
 
@@ -98,7 +86,21 @@ class LinkedList {
       count++;
     };
     return currentNode;
-  }
+  };
+
+  getKthToLast(key) {
+    let currentNode = this.head;
+    let size = this.size();
+    console.log(size);
+    
+    while (size > key) {
+      console.log(currentNode);
+      currentNode = currentNode.next;
+      size--;
+    };
+    return currentNode;
+  };
+
 };
 
 
