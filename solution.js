@@ -91,15 +91,19 @@ class LinkedList {
   getKthToLast(key) {
     let currentNode = this.head;
     let size = this.size();
-    console.log(size);
-    
+    // console.log(size);
+
     while (size > key) {
-      console.log(currentNode);
+      // console.log(currentNode);
       currentNode = currentNode.next;
       size--;
     };
     return currentNode;
   };
+
+  isEmpty(){
+    return this.head === null ? true : false
+  }
 
 };
 
