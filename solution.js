@@ -14,11 +14,15 @@ class LinkedList {
     this.head = head;
   };
 
-  insert(data, position) {
+  insert(data) {
     let newNode = new Node(data);
 
-    newNode.next = this.head;
-    this.head = newNode;
+    if (!this.head) {
+      this.head = newNode;
+  } else {
+      newNode.next = this.head;
+      this.head = newNode;
+  };
   };
 
   size() {
@@ -91,23 +95,35 @@ class LinkedList {
   getKthToLast(key) {
     let currentNode = this.head;
     let size = this.size();
-    // console.log(size);
 
-    while (size > key) {
-      // console.log(currentNode);
+    while (size - 1 > key) {
+      console.log(currentNode);
       currentNode = currentNode.next;
       size--;
     };
     return currentNode;
   };
 
-  isEmpty(){
+  isEmpty() {
     return this.head === null ? true : false
   };
 
-  clear(){
+  clear() {
     return this.head = null;
-  }
+  };
+
+  // toArray() {
+  //   let currentNode = this.head;
+  //   let dataArray = [];
+
+  //   while (currentNode) {
+  //     dataArray.push(currentNode.data);
+  //     console.log(dataArray, currentNode);
+      
+  //     currentNode = currentNode.next;
+  //   };
+  //   return dataArray;
+  // };
 
 };
 
