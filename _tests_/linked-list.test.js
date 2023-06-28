@@ -5,7 +5,7 @@ const { exportAllDeclaration, logicalExpression } = require("@babel/types");
 
 describe("Linked Lists", () => {
   let wordList, numList;
-  beforeAll(() => {
+  beforeEach(() => {
     wordList = new LinkedList();
     for (let word of words) {
       wordList.insert(word);
@@ -26,7 +26,7 @@ describe("Linked Lists", () => {
     expect(newList).toStrictEqual(new LinkedList());
   });
 
-  test("Add to the linked list using an insert method", () => {
+  test("Add to the linked list using an insert method. Each new element should become the head. The first element that was inserted should be the tail.", () => {
     let newList = new LinkedList();
     newList.insert(111);
     expect(newList.head.data).toEqual(111);
